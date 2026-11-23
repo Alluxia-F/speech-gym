@@ -17,13 +17,13 @@ Speech Gym is an open-source practice room modeled on a Toastmasters-style meeti
 
 | Role | What it does | Who can fill it |
 | --- | --- | --- |
-| Speaker | Gives a prepared speech or answers an impromptu question | Human |
-| Toastmaster | Hosts the session and introduces each part | Human or AI |
-| Table Topics Master | Asks impromptu questions based on the theme | Human or AI |
-| Evaluator | Gives structured feedback on a speech | Human or AI |
-| Grammarian | Comments on word choice and language use | Human or AI |
-| Timer | Tracks speaking time against the target | Code, no AI needed |
-| Ah-Counter | Counts filler words such as "um" and "you know" | Code, no AI needed |
+| [Speaker](docs/roles/speaker.md) | Gives a prepared speech or answers an impromptu question | Human |
+| [Captain](docs/roles/captain.md) | Hosts the session and introduces each part | Human or AI |
+| [Sparring Partner](docs/roles/sparring-partner.md) | Runs the sparring round: impromptu questions on the theme that nobody has seen in advance | Human or AI |
+| [Coach](docs/roles/coach.md) | Gives structured feedback on a speech | Human or AI |
+| [Form Checker](docs/roles/form-checker.md) | Comments on word choice and language use | Human or AI |
+| [Pacer](docs/roles/pacer.md) | Tracks speaking time against the target | Code, no AI needed |
+| [Spotter](docs/roles/spotter.md) | Counts filler words such as "um" and "you know" | Code, no AI needed |
 
 ## How it works
 
@@ -60,7 +60,7 @@ Evaluation quality depends most on the language model. A mid-tier or top-tier cl
 
 ## Roadmap
 
-1. **Solo practice.** One speaker, one theme, AI Table Topics Master and Evaluator, timer, and filler-word count.
+1. **Solo practice.** One speaker, one theme, AI Sparring Partner and Coach, timer, and filler-word count.
 2. **Provider settings.** Choose a model per role, and enter your own keys.
 3. **Rooms with friends.** Peer-to-peer rooms with human and AI roles mixed.
 4. **Deeper delivery feedback.** Vocal variety and, later, video-based feedback on body language.
