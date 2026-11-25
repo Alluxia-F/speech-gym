@@ -4,7 +4,7 @@ Practice public speaking with AI, alone or with friends.
 
 Speech Gym is an open-source practice room modeled on a Toastmasters-style meeting. You give a speech or answer an impromptu question, and AI fills the meeting roles that no human is available for: it hosts, asks the questions, and gives you a structured evaluation. Friends can join the same room peer-to-peer and take any role themselves.
 
-> **Status:** early design. Nothing here is built yet. This README describes what the project is going to be.
+> **Status:** early development. Solo practice of a prepared speech works today: record, transcribe, get Pacer and Spotter reports, and get a Coach evaluation. The sparring round, the other AI roles, and rooms with friends are not built yet. Sections below describe the full plan.
 
 ## What you can do
 
@@ -12,6 +12,8 @@ Speech Gym is an open-source practice room modeled on a Toastmasters-style meeti
 - **Practice with friends.** Friends join your room directly over a peer-to-peer connection. Humans take the roles they want, and AI fills the rest.
 - **Pick a theme.** Each session runs around one theme, which shapes the impromptu questions and the host's remarks.
 - **Get a real evaluation.** Feedback quotes what you actually said, and comes with your pace, pauses, filler-word count, and timing.
+- **Check your pronunciation clarity.** Paste the script you plan to read, in English. The app compares it with what the speech recognizer heard, highlights the words a listener could not make out, and lets you replay how you said each one next to a reference.
+- **Drill what was unclear.** After the feedback, a drill session has you repeat the unclear words, contrasting pairs, and sentences until the listener hears each one clearly three times.
 
 ## Meeting roles
 
@@ -67,7 +69,27 @@ Evaluation quality depends most on the language model. A mid-tier or top-tier cl
 
 ## Getting started
 
-Setup instructions will be added once the first version exists.
+You need [Node.js](https://nodejs.org) 20 or later and a recent version of Chrome, Edge, or Safari.
+
+```bash
+git clone https://github.com/Alluxia-F/speech-gym.git
+cd speech-gym
+npm install
+npm run dev
+```
+
+Open the address the command prints, usually `http://localhost:5173`.
+
+1. Open **Settings** and choose how the Coach runs:
+   - **Claude**: paste your own Anthropic API key. It is stored only in your browser.
+   - **Ollama**: install [Ollama](https://ollama.com), pull a model, and enter its name. No key is needed.
+2. Enter a speech title, a target length, and up to three goals. To practice pronunciation, also paste your script.
+3. Choose **Start speaking** and give your speech. The clock starts at your first word, and the border turns green, yellow, then red as you move through your target time.
+4. Choose **Finish speech**. The first run downloads the speech-to-text model, which takes about a minute. Later runs start right away.
+
+The timing, pace, and filler reports work with no key and no Ollama. Only the Coach's evaluation needs a language model.
+
+To run the unit tests, use `npm test`.
 
 ## Contributing
 
